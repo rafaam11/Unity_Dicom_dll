@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using KDicom;
 
-public class DisplayDicomImage3DPlaneBehaviour : MonoBehaviour
+public class DisplayDicomImage3DPlane : MonoBehaviour
 {
 
     Texture2D m_Texture;
@@ -254,10 +254,10 @@ public class DisplayDicomImage3DPlaneBehaviour : MonoBehaviour
 
     void FindDicomVolume()
     {
-        var dicomloader = gameObject.GetComponent<DicomVolumeLoaderBehaviour>();
+        var dicomloader = gameObject.GetComponent<DicomVolumeLoader>();
         if (dicomloader == null)
         {
-            dicomloader = gameObject.GetComponentInParent<DicomVolumeLoaderBehaviour>();
+            dicomloader = gameObject.GetComponentInParent<DicomVolumeLoader>();
             if (dicomloader == null)
                 return;
         }

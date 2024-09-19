@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using KDicom;
 
-public class DicomVolumeLoaderBehaviour : MonoBehaviour {
+public class DicomVolumeLoader : MonoBehaviour {
     [SerializeField]
     string m_DicomDirectoryPath;
 

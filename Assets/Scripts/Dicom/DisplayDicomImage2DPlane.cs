@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using KDicom;
 
-public class mDisplayDicomImageBehaviour : MonoBehaviour
+public class DisplayDicomImage2DPlane : MonoBehaviour
 {
     public GameObject DICOMLoader_GO;
     [SerializeField]
@@ -99,17 +99,17 @@ public class mDisplayDicomImageBehaviour : MonoBehaviour
             switch (m_MPR_Type)
             {
                 case MPRType.Axial:
-                    m_Index = DICOMLoader_GO.transform.Find("Axial").GetComponent<DisplayDicomImage3DPlaneBehaviour>().m_Index;
+                    m_Index = DICOMLoader_GO.transform.Find("Axial").GetComponent<DisplayDicomImage3DPlane>().m_Index;
                     if (m_Index < 0 || m_DicomVolume.Depth <= m_Index)
                         return;
                     break;
                 case MPRType.Coronal:
-                    m_Index = DICOMLoader_GO.transform.Find("Coronal").GetComponent<DisplayDicomImage3DPlaneBehaviour>().m_Index;
+                    m_Index = DICOMLoader_GO.transform.Find("Coronal").GetComponent<DisplayDicomImage3DPlane>().m_Index;
                     if (m_Index < 0 || m_DicomVolume.Height <= m_Index)
                         return;
                     break;
                 case MPRType.Sagittal:
-                    m_Index = DICOMLoader_GO.transform.Find("Sagittal").GetComponent<DisplayDicomImage3DPlaneBehaviour>().m_Index;
+                    m_Index = DICOMLoader_GO.transform.Find("Sagittal").GetComponent<DisplayDicomImage3DPlane>().m_Index;
                     if (m_Index < 0 || m_DicomVolume.Width <= m_Index)
                         return;
                     break;
@@ -171,7 +171,7 @@ public class mDisplayDicomImageBehaviour : MonoBehaviour
 
     void FindDicomVolume()
     {
-        var dicomVolumeLoaderBehaviour = DICOMLoader_GO.GetComponent<DicomVolumeLoaderBehaviour>();
+        var dicomVolumeLoaderBehaviour = DICOMLoader_GO.GetComponent<DicomVolumeLoader>();
         if (dicomVolumeLoaderBehaviour == null)
         {
             return;

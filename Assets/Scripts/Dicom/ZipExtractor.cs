@@ -2,7 +2,7 @@ using System.IO;
 using System.IO.Compression;
 using UnityEngine;
 
-public class UnzipDicom : MonoBehaviour
+public class ZipExtractor : MonoBehaviour
 {
     // 압축을 해제할 zip 파일 경로
     public string zipFilePath = "Assets/StreamingAssets/Name.zip";
