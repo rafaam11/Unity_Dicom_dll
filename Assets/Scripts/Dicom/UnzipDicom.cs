@@ -41,6 +41,13 @@ public class UnzipDicom : MonoBehaviour
 
     public void ExtractZipFile(string zipPath, string extractPath)
     {
+        // 이미 압축이 해제되었는지 확인 (해당 폴더에 파일이나 디렉토리가 있는지 확인)
+        if (Directory.Exists(extractPath) && Directory.GetFileSystemEntries(extractPath).Length > 0)
+        {
+            Debug.Log("압축이 이미 해제되었습니다. 압축 해제를 건너뜁니다.");
+            return;
+        }
+
         // zip 파일 압축 해제
         try
         {

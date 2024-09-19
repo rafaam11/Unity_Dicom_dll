@@ -13,8 +13,7 @@ public class DicomVolumeLoaderBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        m_DicomDirectoryPath = gameObject.GetComponent<UnzipDicom>().extractFolderPath;
-
+        
         // Load Dicom files
         var volumes = DicomLoader.LoadDicomVolumes(m_DicomDirectoryPath);
 
@@ -54,6 +53,7 @@ public class DicomVolumeLoaderBehaviour : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
 
     }
 }
